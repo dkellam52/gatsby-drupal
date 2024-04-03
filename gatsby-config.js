@@ -1,12 +1,27 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
- */
-
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
 module.exports = {
-  plugins: [],
-}
+  siteMetadata: {
+    title: "Dominique's First Gatsby Site",
+    author: "did you forget to add me",
+  },
+  plugins: [
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-plugin-nodejs",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `blog`,
+        path: `${__dirname}/blog`,
+      }
+    },
+    "gatsby-plugin-mdx", 
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        typeName: "drupal",
+        fieldName: "Drupal",
+        url: "https://csc496f22demo.tldr.dev/graphql"
+      }
+    }  
+  ],
+};

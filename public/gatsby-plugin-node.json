@@ -1,0 +1,81 @@
+{
+  "paths": [
+    {
+      "path": "/en/recipes/deep-mediterranean-quiche/"
+    },
+    {
+      "path": "/en/recipes/vegan-chocolate-and-nut-brownies/"
+    },
+    {
+      "path": "/en/recipes/super-easy-vegetarian-pasta-bake/"
+    },
+    {
+      "path": "/en/recipes/watercress-soup/"
+    },
+    {
+      "path": "/en/recipes/victoria-sponge-cake/"
+    },
+    {
+      "path": "/en/recipes/gluten-free-pizza/"
+    },
+    {
+      "path": "/en/recipes/thai-green-curry/"
+    },
+    {
+      "path": "/en/recipes/crema-catalana/"
+    },
+    {
+      "path": "/en/recipes/fiery-chili-sauce/"
+    },
+    {
+      "path": "/en/recipes/borscht-with-pork-ribs/"
+    },
+    {
+      "path": "/article/0b9a1b2e-71ad-44f1-a695-aa34e073700e/"
+    },
+    {
+      "path": "/article/394eb6fe-59e7-4aeb-99d0-89595428f99d/"
+    },
+    {
+      "path": "/article/d4b74e7b-1a43-4165-82b8-a8fe017d02b3/"
+    },
+    {
+      "path": "/article/e7c88cc6-0d4b-4ae1-bce6-b9b3b229599c/"
+    },
+    {
+      "path": "/article/c0704f34-efd8-408e-8c83-5e3f16186dbb/"
+    },
+    {
+      "path": "/article/6861da33-8f98-4d5a-8dac-fedef809cac2/"
+    },
+    {
+      "path": "/article/9134878c-7902-445a-a052-d765af34cafe/"
+    },
+    {
+      "path": "/article/58b18b6e-2177-4b72-96af-bbe0b54587b0/"
+    },
+    {
+      "path": "/404/"
+    },
+    {
+      "path": "/404.html"
+    },
+    {
+      "path": "/about/"
+    },
+    {
+      "path": "/article/"
+    },
+    {
+      "path": "/blog/"
+    },
+    {
+      "path": "/"
+    },
+    {
+      "path": "/recipe/"
+    }
+  ],
+  "redirects": [],
+  "pathPrefix": ""
+}
