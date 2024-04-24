@@ -1,49 +1,25 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
+
 <h1 align="center">
-  Gatsby Minimal Starter
+  Automation & Optimization with GitHub
 </h1>
 
-## 🚀 Quick start
+## 🚀 GitHub Actions
 
-1.  **Create a Gatsby site.**
+### 🚦Workflow Steps
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+The `.github/workflows/build-and-deploy.yml` file defines our GitHub Actions workflow for building and deploying a Gatsby site, which includes the following steps:
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+1. **Checkout Code**: Uses the `actions/checkout@v2.3.1` to check out the current repository code into the runner.
+2. **Install Node.js**: Sets up Node.js version 18.x using `actions/setup-node@v1`.
+3. **Install Project Dependencies**: Runs `npm ci` to install the project dependencies ensuring a clean, consistent installation.
+4. **Install Gatsby CLI**: Installs a specific version of the Gatsby CLI (5.13.2) globally to facilitate building the site.
+5. **Build**: Executes `gatsby build` to compile the static site assets.
+6. **Verify Build**: Lists the files in the `public` directory post-build to verify successful build.
+7. **Setup SSH for Deployment**: Prepares SSH configuration for secure file transfer, including setting up private keys and known hosts.
+8. **SFTP Upload**: Uploads the built site files to the deployment server using Secure File Transfer Protocol (SFTP).
 
-2.  **Start developing.**
+This workflow is triggered on every push to the `main` branch, ensuring that updates are automatically built and deployed, maintaining the live site up-to-date.
 
-    Navigate into your new site’s directory and start it up.
+### 🎯 Deployment
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
-
-3.  **Open the code and start customizing!**
-
-    Your site is now running at http://localhost:8000!
-
-    Edit `src/pages/index.js` to see your site update in real-time!
-
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Guides](https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Netlify)
-
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
-
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal)
+Deployment involves transferring the `public` directory files to a remote server via SFTP. It uses SSH keys for secure connection, which are stored as secrets in the GitHub repository settings. Ensure that the deployment secrets like `ssh_private_key`, `host`, `deploy_user`, and `destination_path` are correctly set up in your repository's secrets settings for a smooth deployment process.
